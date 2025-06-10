@@ -3,7 +3,11 @@ const CampoTexto = (props) => {
   return (
     <div className="campo-texto">
       <label htmlFor="campoTexto">{props.label}</label>
-      <input type="text" placeholder={props.placeholder} />
+      <input
+        required={props.obrigatorio}
+        type="text"
+        placeholder={props.placeholder}
+      />
     </div>
   );
 };
