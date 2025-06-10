@@ -3,7 +3,7 @@ const ListaSuspensa = (props) => {
   return (
     <div className="lista-suspensa">
       <label htmlFor="">{props.label}</label>
-      <select>
+      <select required={props.required}>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}
