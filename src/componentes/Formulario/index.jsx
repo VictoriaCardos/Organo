@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Formulario.css";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
@@ -15,7 +16,15 @@ const Formulario = () => {
   // Função para lidar com o envio do formulário
   const aoSalvar = (evento) => {
     evento.preventDefault(); // Evita o recarregamento da página
+    console.log("Formulário enviado com os dados:", nome, cargo, imagem, time);
   };
+
+  //Estados dos componentes
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("");
+
   return (
     <section className="formulario">
       <form action="" onSubmit={aoSalvar}>
@@ -24,14 +33,28 @@ const Formulario = () => {
           obrigatorio={true}
           label="Nome"
           placeholder="Digite seu nome"
+          valor={nome}
+          aoAlterado={(valor) => setNome(valor)}
         />
         <CampoTexto
           obrigatorio={true}
           label="Cargo"
           placeholder="Digite seu cargo"
+          valor={cargo}
+          aoAlterado={(valor) => setCargo(valor)}
         />
-        <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <ListaSuspensa label="Time" itens={times} />
+        <CampoTexto
+          label="Imagem"
+          placeholder="Informe o endereço da imagem"
+          valor={imagem}
+          aoAlterado={(valor) => setImagem(valor)}
+        />
+        <ListaSuspensa
+          label="Time"
+          itens={times}
+          valor={time}
+          aoAlterado={(valor) => setTime(valor)}
+        />
         <Botao> Criar Card </Botao>
       </form>
     </section>
