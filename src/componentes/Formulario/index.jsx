@@ -3,7 +3,7 @@ import "./Formulario.css";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
-const Formulario = () => {
+const Formulario = (props) => {
   const times = [
     "Programação",
     "Front-End",
@@ -16,7 +16,12 @@ const Formulario = () => {
   // Função para lidar com o envio do formulário
   const aoSalvar = (evento) => {
     evento.preventDefault(); // Evita o recarregamento da página
-    console.log("Formulário enviado com os dados:", nome, cargo, imagem, time);
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
 
   //Estados dos componentes
