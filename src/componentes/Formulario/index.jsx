@@ -4,15 +4,6 @@ import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 const Formulario = (props) => {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
   // Função para lidar com o envio do formulário
   const aoSalvar = (evento) => {
     evento.preventDefault(); // Evita o recarregamento da página
@@ -56,7 +47,7 @@ const Formulario = (props) => {
         />
         <ListaSuspensa
           label="Time"
-          itens={times}
+          itens={props.times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
