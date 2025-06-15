@@ -13,7 +13,16 @@ const Formulario = (props) => {
       imagem,
       time,
     });
+    limparCampos(); // Limpa os campos após o envio
   };
+
+  // Função para limpar os campos do formulário
+  const limparCampos = () => {
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime("");
+  }
 
   //Estados dos componentes
   const [nome, setNome] = useState("");
