@@ -24,6 +24,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   };
 
+  const removerColaborador = (nome) => {
+    setColaboradores(colaboradores.filter((colab) => colab.nome !== nome));
+  };
+
   return (
     <div>
       <Banner />
@@ -42,6 +46,7 @@ function App() {
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}
+          aoRemover={removerColaborador}
         />
       ))}
       <Rodape />
