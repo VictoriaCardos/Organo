@@ -7,7 +7,7 @@ const Colaborador = (props) => {
       <div className="cabecalho" style={{ backgroundColor: props.corDeFundo }}>
         <Botao
           className="botao-excluir"
-          onClick={() => props.aoRemover(props.nome)}
+          onClick={() => props.aoRemover(props.time)}
           style={{
             backgroundColor: props.corSecundaria,
             color: props.corDeFundo,
