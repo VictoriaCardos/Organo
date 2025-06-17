@@ -6,14 +6,18 @@ import Botao from "../Botao";
 const Formulario = (props) => {
   // Função para lidar com o envio do formulário
   const aoSalvar = (evento) => {
-    evento.preventDefault(); // Evita o recarregamento da página
+    evento.preventDefault();
+    if (props.colaboradores.some((colaborador) => colaborador.time === time)) {
+      alert("Colaborador já cadastrado nesse time!");
+      return;
+    }
     props.aoColaboradorCadastrado({
       nome,
       cargo,
       imagem,
       time,
     });
-    limparCampos(); // Limpa os campos após o envio
+    limparCampos();
   };
 
   // Função para limpar os campos do formulário
