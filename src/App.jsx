@@ -32,6 +32,7 @@ function App() {
     <div>
       <Banner />
       <Formulario
+        colaboradores={colaboradores}
         times={times.map((time) => time.nome)}
         aoColaboradorCadastrado={(colaborador) =>
           aoNovoColaboradorCadastrado(colaborador)
