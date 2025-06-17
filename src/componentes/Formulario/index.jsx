@@ -22,7 +22,7 @@ const Formulario = (props) => {
     setCargo("");
     setImagem("");
     setTime("");
-  }
+  };
 
   //Estados dos componentes
   const [nome, setNome] = useState("");
@@ -60,7 +60,7 @@ const Formulario = (props) => {
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
-        <Botao> Criar Card </Botao>
+        <Botao type="submit"> Criar Card </Botao>
       </form>
     </section>
   );
