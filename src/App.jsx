@@ -18,10 +18,12 @@ function App() {
       corSecundaria: "#FFEEDF",
     },
   ];
-
+  const [scrollToTime, setScrollToTime] = useState(null);
   const [colaboradores, setColaboradores] = useState([]);
+
   const aoNovoColaboradorCadastrado = (colaborador) => {
     setColaboradores([...colaboradores, colaborador]);
+    setScrollToTime(colaborador.time); // Marca o time para scroll
   };
 
   const removerColaborador = (nome, time) => {
@@ -52,6 +54,7 @@ function App() {
             (colaborador) => colaborador.time === time.nome
           )}
           aoRemover={removerColaborador}
+          scrollTo={scrollToTime === time.nome} // Passa true para o time recém-adicionado
         />
       ))}
       <Rodape />
