@@ -1,12 +1,34 @@
-# React + Vite
+# Organo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de cadastro e organização de colaboradores por time.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] Cadastro de colaboradores
+- [x] Cadastro de colaboradores com imagem, cargo e time
+- [x] Validação para impedir cadastro duplicado no mesmo time
+- [x] Exclusão individual de colaboradores
+- [x] Permite o mesmo colaborador em times diferentes
+- [x] Scroll suave até o time ao adicionar colaborador
+- [x] Layout responsivo e centralizado
 
-## Expanding the ESLint configuration
+## Conteúdos estudados
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [x] **useState** – Gerenciamento de estados em componentes funcionais
+- [x] **useEffect** – Efeitos colaterais e atualização baseada em dependências
+- [x] **useRef** – Referências para elementos do DOM e controle de scroll
+- [x] **Props** – Comunicação entre componentes
+- [x] **Componentização** – Criação e reutilização de componentes
+- [x] **Renderização condicional** – Exibição de elementos com base em condições
+- [x] **Manipulação de listas** – Uso de `.map()` para renderizar múltiplos componentes
+- [x] **Estilização com CSS** – Customização visual dos componentes
+- [x] **Validação de formulários** – Prevenção de cadastros duplicados
+- [x] **Eventos** – Manipulação de eventos de formulário e clique
+- [x] **Scroll suave** – Uso de `scrollIntoView` para navegação fluida
+
+## Como rodar
+
+```bash
+npm install
+npm start
+```
