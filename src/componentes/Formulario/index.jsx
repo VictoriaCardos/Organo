@@ -7,7 +7,11 @@ const Formulario = (props) => {
   // Função para lidar com o envio do formulário
   const aoSalvar = (evento) => {
     evento.preventDefault();
-    if (props.colaboradores.some((colaborador) => colaborador.time === time)) {
+    if (
+      props.colaboradores.some(
+        (colaborador) => colaborador.nome === nome && colaborador.time === time
+      )
+    ) {
       alert("Colaborador já cadastrado nesse time!");
       return;
     }
