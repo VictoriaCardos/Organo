@@ -1,9 +1,22 @@
 import "./Time.css";
 import Colaborador from "../Colaborador";
+import { useEffect, useRef } from "react";
 
 const Time = (props) => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (props.scrollTo && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [props.scrollTo, props.colaboradores.length]);
+
   return props.colaboradores.length > 0 ? (
-    <section className="time" style={{ backgroundColor: props.corSecundaria }}>
+    <section
+      ref={sectionRef}
+      className="time"
+      style={{ backgroundColor: props.corSecundaria }}
+    >
       <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
       <div className="colaboradores">
         {props.colaboradores.map((colaborador) => (
