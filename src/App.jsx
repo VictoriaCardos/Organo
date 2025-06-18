@@ -24,8 +24,12 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   };
 
-  const removerColaborador = (time) => {
-    setColaboradores(colaboradores.filter((colab) => colab.time !== time));
+  const removerColaborador = (nome, time) => {
+    setColaboradores(
+      colaboradores.filter(
+        (colab) => !(colab.nome === nome && colab.time === time)
+      )
+    );
   };
 
   return (
